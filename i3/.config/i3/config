@@ -4,7 +4,6 @@
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
 #
-
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
@@ -48,7 +47,7 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
-bindsym $mod+d exec dmenu_extended_run
+bindsym $mod+d exec --no-startup-id dmenu_extended_run
 # There also is i3-dmenu-desktop which only displays applications
 # shipping a .desktop file.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
@@ -161,13 +160,14 @@ assign [class="cmus"] $ws10
 #Open applications
 
 #file
-exec --no-startup-id pcmanfm
-
+bindsym $mod+F2 exec dmenu_extended_run ranger
 #net
-bindsym $mod+F3 exec icecat
+bindsym $mod+F3 exec qutebrowser
 
 #game
 exec --no-startup-id steam
+
+#music
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -211,8 +211,10 @@ client.unfocused        $inactive-color		$inactive-color		$text-color		$indicato
 
 
 
+exec_always --no-startup-id picom
 bar {
-	i3bar_command i3bar -t
+	i3bar_command i3bar --transparency
+	i3bar_command i3bar
 	status_command i3blocks
 	tray_output primary
 	font xft:consolas 9.4
@@ -220,17 +222,18 @@ bar {
 	tray_padding 1
 	position top
 
-	colors {
-		background #3c434b
-		statusline $text-color
-		separator $text-color 
-
-        	focused_workspace  #cc2400 #870000 #ffffff
-        	active_workspace   #333333 #bd5050 #ffffff
-        	inactive_workspace #333333 #222222 #888888
-        	urgent_workspace   #870000 #333333 #ffffff
-        	binding_mode       #2f343a #900000 #ffffff
-    }
+ 	colors {
+		background #3c434b00
+ 		statusline #ffffff
+ 		separator  #ffffff 
+		
+ 
+         	focused_workspace  #cc2400 #870000 #ffffff
+         	active_workspace   #333333 #bd5050 #ffffff
+         	inactive_workspace #870000 #22222200 #870000
+         	urgent_workspace   #870000 #333333 #ffffff
+         	binding_mode       #2f343a #900000 #ffffff
+	}
 }
 
 ##################
@@ -247,14 +250,14 @@ bar {
 
 
 #REFRESH
-	exec_always xrdb ~/.Xresources
+	exec_always --no-startup-id xrdb ~/.Xresources
 
 #WALLPAPER
-	exec_always feh --bg-fill ~/Pictures/Wallpapers/Minimalism/Pirate.jpg
-	bindsym $mod+x exec feh --bg-fill ~/Pictures/.Reddit/solo/CZSSwQx.jpg
+	exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/Cyberpunk/city2.jpg
+
 
 #ALIGN MONITORS
-	exec_always xrandr --output DVI-D-0 --off --output DP-0 --off --output DP-1 --off --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-2 --off --output DP-3 --off --output DP-4 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --rate 144 --output DP-5 --off
+	exec_always --no-startup-id xrandr --output DVI-D-0 --off --output DP-0 --off --output DP-1 --off --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-2 --off --output DP-3 --off --output DP-4 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --rate 144  --output DP-5 --off
 
 ###################
 ##   Calibrate   ##
@@ -262,11 +265,11 @@ bar {
 ###################
 
 #KEYBOARD LAYOUT
-	exec_always setxkbmap se
+	exec_always --no-startup-id setxkbmap se
 
 #MOUSE-DPI
-	exec_always rivalcfg -S 800
-	exec_always rivalcfg -s 800
+	exec_always --no-startup-id rivalcfg -S 800
+	exec_always --no-startup-id rivalcfg -s 800
 
 
 
