@@ -194,14 +194,14 @@ bindsym $mod+Mod1+Right resize grow width 5 px or 5 ppt
 
 #Color Variables
 
-set $bg-color		        #3a3a3a
+set $bg-color		        #870000
 set $inactive-color	        #474747
 set $text-color                 #dbdbdb
 set $active-text-color		#000000
 set $inactive-text-color        #b6b6b6
 set $urgent-bg-color            #b80000
 set $indicator-color            #dbdbdb
-set $active-color		#ffffff
+set $active-color		#870000
 
 
 # Window Colors
@@ -214,7 +214,6 @@ client.unfocused        $inactive-color		$inactive-color		$text-color		$indicato
 exec_always --no-startup-id picom
 bar {
 	i3bar_command i3bar --transparency
-	i3bar_command i3bar
 	status_command i3blocks
 	tray_output primary
 	font xft:consolas 9.4
@@ -227,7 +226,7 @@ bar {
  		statusline #ffffff
  		separator  #ffffff 
 		
- 
+         	focused_workspace  #cc2400 #870000 #ffffff
          	focused_workspace  #cc2400 #870000 #ffffff
          	active_workspace   #333333 #bd5050 #ffffff
          	inactive_workspace #870000 #22222200 #870000
@@ -246,14 +245,14 @@ bar {
 	gaps outer -2
 	smart_gaps on
 	smart_borders on
-	default_border pixel 1
+	default_border pixel 2
 
 
 #REFRESH
 	exec_always --no-startup-id xrdb ~/.Xresources
 
 #WALLPAPER
-	exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/Cyberpunk/city2.jpg
+	exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/Cyberpunk/Skull.png
 
 
 #ALIGN MONITORS
