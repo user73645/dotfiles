@@ -2,9 +2,8 @@
 auto-reload yes
 
 # external browser
-browser "/usr/local/bin/w3m %u"
-macro m set browser "mpv"; open-in-browser ; set browser "/usr/local/bin/w3m %u"
-macro f set browser "/usr/local/bin/firefox %u"; open-in-browser ; set browser "/usr/local/bin/w3m %u"
+browser "qutebrowser"
+macro m set browser "mpv"; open-in-browser ; set browser "qutebrowser"
 
 # unbind keys
 
@@ -15,13 +14,13 @@ bind-key l open
 bind-key h quit
 
 # solarized
-color background         default   default
-color listnormal         default   default
-color listnormal_unread  default   default
-color listfocus          black     cyan
-color listfocus_unread   black     cyan
-color info               default   black
-color article            default   default
+# color background         default   default
+# color listnormal         default   default
+# color listnormal_unread  default   default
+# color listfocus          black     cyan
+# color listfocus_unread   black     cyan
+# color info               default   black
+# color article            default   default
 
 # highlights
 highlight article "^(Title):.*$" blue default
