@@ -1,0 +1,35 @@
+[volume]
+label= ♪ VOL:
+command=echo $(pamixer --get-volume)% 
+interval=1
+
+[mediaplayer]
+label= ♫ 
+command=./Now_Playing.sh
+interval=1
+
+[temperature]
+command=./temperature
+label= 🌡 
+interval=10
+T_WARD=70
+T_CRIT=90
+
+[gpu-load]
+label= 🕹 
+command=./gpu-load
+interval=10
+
+[date]
+label= 📅 
+command=echo $(date '+%d/%m')
+interval=1
+
+[time]
+label= 🕑 
+command=date '+%H:%M:%S'
+interval=1
+
+[separator]
+command=echo 
+interval=once
