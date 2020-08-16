@@ -1,5 +1,6 @@
 -----News-----
 https://www.archlinux.org/feeds/news/
+https://rootgamer.com/feed
 -----Games-----
 https://www.epicbundle.com/feed/ Gaming
 https://blog.counter-strike.net/index.php/feed/ Gaming
@@ -10,6 +11,7 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCXuqSBlHAE6Xw-yeJA0Tunw Tec
 https://www.youtube.com/feeds/videos.xml?channel_id=UCdBK94H6oZT2Q7l0-b0xmMg Techtubers LinusMediaGroup
 https://www.youtube.com/feeds/videos.xml?channel_id=UCQkd05iAYed2-LOmhjzDG6g Techtubers 	# Lowspecgamer
 https://www.youtube.com/feeds/videos.xml?channel_id=UChIs72whgZI9w6d6FhwGGHA Techtubers 	# Gamers Nexus
+https://www.youtube.com/feeds/videos.xml?channel_id=UC4w1YQAJMWOz4qtxinq55LQ Techtubers   # Level1Techs
 https://www.youtube.com/feeds/videos.xml?channel_id=UCjr2bPAyPV7t35MvcgT3W8Q Privacy 		# Hated one
 https://www.youtube.com/feeds/videos.xml?channel_id=UCq6VFHwMzcMXbuKyG7SQYIg Commentary 	# Cr1tikal
 https://www.youtube.com/feeds/videos.xml?channel_id=UCtMVHI3AJD4Qk4hcbZnI9ZQ Commentary 	# SomeOrdinaryGamers
@@ -32,7 +34,6 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCtHaxi4GTYDpJgMSGy7AeSw Com
 https://www.youtube.com/feeds/videos.xml?channel_id=UCFLwN7vRu8M057qJF8TsBaA Commedy 		# Upisnotjump
 https://www.youtube.com/feeds/videos.xml?channel_id=UC9PIn6-XuRKZ5HmYeu46AIw Documentary 	# Barely sociable
 https://www.youtube.com/feeds/videos.xml?channel_id=UCr_Q-bPpcw5fJ-Oow1BW1NQ Documentary	# Kraut
-https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA Linux 		# Luke smith
 https://www.youtube.com/feeds/videos.xml?channel_id=UCsXVk37bltHxD1rDPwtNM8Q Educational 	# Kurzgesagt
 https://www.youtube.com/feeds/videos.xml?channel_id=UC2C_jShtL725hvbm1arSV9w Educational	# CGP Grey
 https://www.youtube.com/feeds/videos.xml?channel_id=UCimiUgDLbi6P17BdaCZpVbg Educational 	# Exurbia
@@ -56,3 +57,7 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCzbDko3wvXoGbbwC_9Sn7yg Mus
 
 
 # TEMPLATE: https://www.youtube.com/feeds/videos.xml?channel_id=UCBa659QWEk1AI4Tg--mrJ2A
+
+---------------
+--Searchterms--
+https://searx.privatenet.cf/?q=%22Leo%20Wedebrand%22&categories=general&language=en-US&format=rss

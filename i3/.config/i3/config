@@ -1,7 +1,9 @@
 set $mod Mod4
+
 font xft:Office Code Pro 9
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
+exec --no-startup-id unclutter
 set $refresh_i3status killall -SIGUSR1 i3status
 
 # -- VOLUME CONTROL -- #
@@ -12,7 +14,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 # -- BASIC BINDS -- #
 floating_modifier $mod
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec termite
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id dmenu_extended_run
 
@@ -50,16 +52,28 @@ bindsym $mod+a focus parent
 
 
 # -- WORKSPACES --#
-set $ws1  "1:WRK"
-set $ws2  "2:INF"
-set $ws3  "3:NET"
+set $ws1  "1:MAIN"
+set $ws2  "2:SCND"
+set $ws3  "3:WEB"
 set $ws4  "4:SPK"
 set $ws5  "5:STM"
-set $ws6  "6:VRT" 
+set $ws6  "6:OTHR" 
 set $ws7  "7:DWN"
-set $ws8  "8:SZE"
+set $ws8  "8:KEE"
 set $ws9  "9:BCK"
 set $ws10 "10:MSC"
+set $ws11 "11:MAIN2"
+set $ws12 "12:SCND2"
+set $ws13 "13:WEB2"
+set $ws14 "14:SPK2"
+set $ws15 "15:STM2"
+set $ws16 "16:OTHR2"
+set $ws17 "17:DWN2"
+set $ws18 "18:KEE2"
+set $ws19 "19:BCK2"
+set $ws20 "20:MSC2"
+set $ws21 "21:RAND"
+set $ws22 "22:YT"
 
 
 # -- SWITCH WORKSPACE -- #
@@ -73,6 +87,18 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
+bindsym $mod+F1 workspace $ws11
+bindsym $mod+F2 workspace $ws12
+bindsym $mod+F3 workspace $ws13
+bindsym $mod+F4 workspace $ws14
+bindsym $mod+F5 workspace $ws15
+bindsym $mod+F6 workspace $ws16
+bindsym $mod+F7 workspace $ws17
+bindsym $mod+F8 workspace $ws18
+bindsym $mod+F9 workspace $ws19
+bindsym $mod+F10 workspace $ws20
+bindsym $mod+F11 workspace $ws21
+bindsym $mod+F12 workspace $ws22
 
 
 # -- MOVE WINDOW TO WORKSPACE -- # 
@@ -86,6 +112,18 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+Shift+F1 move container to workspace $ws11
+bindsym $mod+Shift+F2 move container to workspace $ws12
+bindsym $mod+Shift+F3 move container to workspace $ws13
+bindsym $mod+Shift+F4 move container to workspace $ws14
+bindsym $mod+Shift+F5 move container to workspace $ws15
+bindsym $mod+Shift+F6 move container to workspace $ws16
+bindsym $mod+Shift+F7 move container to workspace $ws17
+bindsym $mod+Shift+F8 move container to workspace $ws18
+bindsym $mod+Shift+F9 move container to workspace $ws19
+bindsym $mod+Shift+F10 move container to workspace $ws20
+bindsym $mod+Shift+F11 move container to workspace $ws21
+bindsym $mod+Shift+F12 move container to workspace $ws22
 
 
 # -- FLOATING APPLICATIONS -- #
@@ -97,18 +135,13 @@ for_window [title="Virtual Machine Manager"] floating enable
 assign [class="Pcmanfm"] $ws2
 assign [class="Tor Browser"] $ws3
 assign [title="Discord"] $ws4
-assign [class="Riot"] $ws4
+assign [class="Element"] $ws4
 assign [class="Steam"] $ws5
-assign [title="Virtual Machine Manager"] $ws6
-assign [class="transmission"] $ws7
-assign [class="GParted"] $ws8
-assign [class="Baobab"] $ws8
-assign [class="cmus"] $ws10
 
 # -- LAUNCH PROGRAMS -- #
-bindsym $mod+F2 exec urxvt -e ranger
-bindsym $mod+F3 exec qutebrowser
-bindsym $mod+F10 exec urxvt -e cmus
+# bindsym $mod+F2 exec termite-e ranger
+# bindsym $mod+F3 exec qutebrowser
+# bindsym $mod+F10 exec termite -e cmus
 
 # -- RELOAD CONFIG -- #
 bindsym $mod+Shift+c reload
@@ -130,15 +163,17 @@ bindsym $mod+Mod1+Right resize grow width 5 px or 5 ppt
 
 
 # -- WINDOW COLORS -- #
-#border					background			urgent				text				indicator
-client.focused			#870000				#870000				#ffc0cb				#ffc0cb
-client.unfocused        #474747				#474747				$dbdbdb				#dbdbdb
+                    #border			 background		  urgent				text				indicator
+client.focused			#870000			 #870000				              #ffc0cb			#ffc0cb
+client.unfocused    #474747			 #474747				              $dbdbdb			#dbdbdb
 
 
 
 
 # -- I3 BAR -- #
-exec_always --no-startup-id picom
+# exec_always --no-startup-id picom
+exec_always --no-startup-id xcompmgr
+set $semi #3c434bb5
 bar {
 	i3bar_command i3bar --transparency
 	status_command i3blocks
@@ -149,24 +184,26 @@ bar {
 	position top
 
  	colors {
-		background #3c434b00
- 		statusline #ffffff
+		background $semi
+    # background #3c434b00
+    statusline #ffffff
  		separator  #870000
-        focused_workspace	#cc2400		#87000055	#ffffff
-        active_workspace   	#870000		#22222200	#ffffff
-        inactive_workspace 	#333333		#bd505000 	#ffffff
-        urgent_workspace   	#870000		#33333322	#ffffff
-        binding_mode       	#2f343a		#900000		#ffffff
-	}
+        focused_workspace	  #cc2400		#87000055	  #ffffff
+        active_workspace   	#870000		#22222200	  #ffffff
+        inactive_workspace 	#333333		#semi       #ffffff
+        urgent_workspace   	#870000		#33333322	  #ffffff
+        binding_mode       	#2f343a		#900000		  #ffffff
+    }
 }
 
 
 # -- GAPS & BORDERS -- #
 
-	gaps inner 14
-	gaps outer -2
-	smart_gaps on
-	smart_borders on
+	# gaps inner 14         # Enable if using i3-gaps
+	# gaps outer -2         # Enable if using i3-gaps
+	# smart_gaps on         # Enable if using i3-gaps
+	# smart_borders on      # Enable if using i3-gaps
+
 	default_border pixel 2
 
 
@@ -174,15 +211,22 @@ bar {
 	exec_always --no-startup-id xrdb ~/.Xresources
 
 # -- WALLPAPER -- #
-	exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/Cyberpunk/Skull.png
+	exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/Comfy/Comfy025.png
+
+# -- PANICBUTTON -- #
+  bindsym $mod+p exec feh --bg-fill ~/Pictures/Wallpapers/Solarized/solarized-gcc.png
 	
+# -- INITIALIZE SKETCH -- #
+	bindsym $mod+Mod1+shift+x exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/Manga/.Risky/Risky012.png
 
 
 # -- ALIGN MONITORS -- #
-	exec_always --no-startup-id xrandr --output DVI-D-0 --off --output DP-0 --off --output DP-1 --off --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-2 --off --output DP-3 --off --output DP-4 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --rate 144  --output DP-5 --off
+	exec_always --no-startup-id xrandr --output DVI-D-0 --off --output DP-0 --off --output DP-1 --off --output HDMI-0 --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-2 --off --output DP-3 --off --output DP-4 --primary --mode 1920x1080 --pos 0x0 --rotate normal --rate 144  --output DP-5 --off
 
 
-# -- KEYBOARD AND MOUSE -- #
+# -- KEYBOARD AND MOUSE --  
+  bindsym Mod1+space exec --no-startup-id setxkbmap se
+  bindsym Mod1+z exec --no-startup-id setxkbmap svorak
 	exec_always --no-startup-id setxkbmap se
 	exec_always --no-startup-id rivalcfg -S 800
 	exec_always --no-startup-id rivalcfg -s 800
