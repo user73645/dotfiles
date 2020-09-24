@@ -1,7 +1,6 @@
 #
 # ~/.bashrc
-#
-
+# 
 set -o vi
 use_color=true
 
@@ -11,6 +10,7 @@ force_color_prompt=yes
 
 export VISUAL=nvim;
 export EDITOR=nvim;
+HISTSIZE=10000
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -25,7 +25,8 @@ alias cd..='cd ..'
 alias vim='nvim'
 alias mutt='neomutt'
 alias gdb='gdb -tui'
-alias mpv='i3-msg layout tabbed && mpv'
+alias pm='ncpamixer'
+alias smloadr='cd ~/Music && smloadr'
 # alias ncpamixer='ncpamixer --config=.config/ncpamixer/ncpamixer.conf'
 
 # Keyboard layout
@@ -43,15 +44,18 @@ alias pic='cd ~/Pictures && ls'
 alias msc='cd ~/Music && ls' 
 alias vid='cd ~/Videos && ls' 
 alias dot='cd ~/.dotfiles && ls' 
+alias pape='cd ~/Pictures/Wallpapers'
  
 # Subjects 
-alias ie='cd ~/Documents/Industriell\ Ekonomi && ls' 
-alias mp='cd ~/Documents/Mattematisk\ Problemlösning && ls'
-alias a2='cd ~/Documents/Analys\ 2 && ls'
-alias aod='cd ~/Documents/Algoritmer\ och\ Datastrukturer && ls'
-alias prim='cd ~/Documents/Algoritmer\ och\ Datastrukturer/Prims\ Algorithm && ls'
+
 
 # TOLASTLINE=$(tput cup "$LINES")
 # PS1="\[$TOLASTLINE\]$PS1"
+# openclose() {
+#     "$@" &
+#     disown
+#     exit
+# }
+
 PS1='\[\033[0;31m\][\[\033[00m\]\u\[\033[0;31m\]@\[\033[00m\]\h\[\033[0;31m\]]\[\033[00m\] \W \[\033[0;31m\]#\[\033[00m\] '
 # PS1='\[$TOLASTLINE\033[0;31m\][\[\033[00m\]\u\[\033[0;31m\]@\[\033[00m\]\h\[\033[0;31m\]]\[\033[00m\] \W \[\033[0;31m\]#\[\033[00m\] '

@@ -2,8 +2,9 @@
 auto-reload yes
 
 # external browser
-browser "qutebrowser"
-macro m set browser "mpv"; open-in-browser ; set browser "qutebrowser"
+#browser "firefox developer edition"
+browser "mpv"
+#macro m set browser "mpv"; open-in-browser ; set browser "firefox developer edition"
 
 # unbind keys
 

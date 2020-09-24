@@ -1,6 +1,6 @@
 [volume]
-label= ♪ VOL:
-command=echo $(pamixer --get-volume)% 
+# label= 🔇 VOL:
+command=if $(pamixer --get-mute); then echo 🔇 $(pamixer --get-volume)%; else echo 🔊 $(pamixer --get-volume)%; fi
 interval=1
 
 [mediaplayer]
