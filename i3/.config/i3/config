@@ -1,5 +1,9 @@
+# -- NO LONGER BEING UPDATED -- #
+
+# -- MODKEY -- #
 set $mod Mod4
 
+# -- BASIC DEFINITIONS -- #
 font xft:Office Code Pro 9
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
@@ -140,7 +144,6 @@ assign [class="Steam"] $ws5
 
 # -- LAUNCH PROGRAMS -- #
 # bindsym $mod+F2 exec termite-e ranger
-# bindsym $mod+F3 exec qutebrowser
 # bindsym $mod+F10 exec termite -e cmus
 
 # -- RELOAD CONFIG -- #
@@ -155,20 +158,15 @@ bindsym $mod+Mod1+h resize shrink width 5 px or 5 ppt
 bindsym $mod+Mod1+j resize grow height 5 px or 5 ppt
 bindsym $mod+Mod1+k resize shrink height 5 px or 5 ppt
 bindsym $mod+Mod1+l resize grow width 5 px or 5 ppt
-
 bindsym $mod+Mod1+Left resize shrink width 5 px or 5 ppt
 bindsym $mod+Mod1+Down resize grow height 5 px or 5 ppt
 bindsym $mod+Mod1+Up resize shrink height 5 px or 5 ppt
 bindsym $mod+Mod1+Right resize grow width 5 px or 5 ppt
 
-
 # -- WINDOW COLORS -- #
-                    #border			 background		  urgent				text				indicator
-client.focused			#870000			 #870000				              #ffc0cb			#ffc0cb
-client.unfocused    #474747			 #474747				              $dbdbdb			#dbdbdb
-
-
-
+# label             #border			 background		  urgent				text				indicator
+client.focused			#870000			 #870000				#ffc0cb		 	  #ffc0cb
+client.unfocused    #474747			 #474747				$dbdbdb		 	  #dbdbdb
 
 # -- I3 BAR -- #
 # exec_always --no-startup-id picom
@@ -196,27 +194,21 @@ bar {
     }
 }
 
-
 # -- GAPS & BORDERS -- #
-
 	# gaps inner 14         # Enable if using i3-gaps
 	# gaps outer -2         # Enable if using i3-gaps
 	# smart_gaps on         # Enable if using i3-gaps
 	# smart_borders on      # Enable if using i3-gaps
-
 	default_border pixel 2
-
 
 # -- REFRESH URXVT -- #
 	exec_always --no-startup-id xrdb ~/.Xresources
 
 # -- WALLPAPER -- #
-      exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/Technology/Technology004.png
-
+      exec_always --no-startup-id feh --bg-fill /PATH/TO/WALLPAPER/
 	
 # -- ALIGN MONITORS -- #
 	exec_always --no-startup-id xrandr --output DVI-D-0 --off --output DP-0 --off --output DP-1 --off --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-2 --off --output DP-3 --off --output DP-4 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --rate 144  --output DP-5 --off
-
 
 # -- KEYBOARD AND MOUSE --  
   bindsym Mod1+space exec --no-startup-id setxkbmap se
@@ -228,9 +220,7 @@ bar {
 # -- LOCKSCREEN -- # 
 	bindsym $mod+shift+x exec i3lock-fancy-multimonitor -n -p		# For blur use -b=AxB
 
-
 # -- CMUS -- #
 	bindsym XF86AudioPause exec cmus-remote --pause
 	bindsym XF86AudioNext exec cmus-remote --next
 	bindsym XF86AudioPrev exec cmus-remote --prev
-
