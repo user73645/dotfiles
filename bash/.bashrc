@@ -1,13 +1,11 @@
-#
 # ~/.bashrc
-# 
-set -o vi
-use_color=true
 
+set -o vi
+neofetch
+use_color=true
 force_color_prompt=yes
 
 # Environment variables
-
 export VISUAL=nvim;
 export EDITOR=nvim;
 HISTSIZE=10000
@@ -46,16 +44,4 @@ alias vid='cd ~/Videos && ls'
 alias dot='cd ~/.dotfiles && ls' 
 alias pape='cd ~/Pictures/Wallpapers'
  
-# Subjects 
-
-
-# TOLASTLINE=$(tput cup "$LINES")
-# PS1="\[$TOLASTLINE\]$PS1"
-# openclose() {
-#     "$@" &
-#     disown
-#     exit
-# }
-
 PS1='\[\033[0;31m\][\[\033[00m\]\u\[\033[0;31m\]@\[\033[00m\]\h\[\033[0;31m\]]\[\033[00m\] \W \[\033[0;31m\]#\[\033[00m\] '
-# PS1='\[$TOLASTLINE\033[0;31m\][\[\033[00m\]\u\[\033[0;31m\]@\[\033[00m\]\h\[\033[0;31m\]]\[\033[00m\] \W \[\033[0;31m\]#\[\033[00m\] '
