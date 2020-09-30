@@ -106,11 +106,10 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Behaviour aliases
-alias cat="bat"
 alias cd..='cd ..'
 alias vim='nvim'
 alias mutt='neomutt'
-alias pm='ncpamixer'
+alias pm='ncpamixer -c ~/.config/ncpamixer/ncpamixer.conf'
 alias p='sudo pacman'
 alias gdb='gdb -tui'
 alias cp='cp -iv'

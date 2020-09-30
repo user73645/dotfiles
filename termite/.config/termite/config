@@ -1,6 +1,6 @@
 [options]
 font = Office Code Pro 11
-cursor_shape = underline
+cursor_shape = line
 
 
 
