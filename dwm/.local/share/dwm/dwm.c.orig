@@ -19,7 +19,7 @@
  * Keys and tagging rules are organized as arrays and defined in config.h.
  *
  * To understand everything else, start reading main().
-feh */
+ */
 #include <errno.h>
 #include <locale.h>
 #include <signal.h>
